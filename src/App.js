@@ -5,6 +5,7 @@ import Main from './pages/Main'
 import Price from './pages/Price'
 import Nav from './components/Nav'
 
+
 export default function App() {
   return (
     <div className="App">
