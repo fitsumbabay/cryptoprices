@@ -1,71 +1,37 @@
-# Getting Started with Create React App
+       Setting Up the Router
+The first component we'll explore is BrowserRouter, which is a context provider allowing all the features of our React-Router to be available to its children. To make our code more semantic, we'll rename BrowserRouter as Router.
+We want all of our application to have the router features, so we'll wrap the App component in index.js with the <Router> component.
+index.js
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+    Components versus Pages
+A common convention is to create two folders, components and pages. Any component that is used as a piece of UI goes in the components folder, any component meant to act as a "page" of the website goes in pages.
+To accomplish this for our example project, we:
+Create a components and pages folder.
+Create a Main.js, Currencies.js, and Price.js file in the pages folder.
+Create the component boilerplate in each component.
+Main.js
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+         Creating Our Routes
+ import the Route & Routes component into App. This will allow us define which of our components should render depending on the URL. We'll also import our pages for our routes.
+App.js
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The Currencies Component
+In this component we will be doing the following:
+Creating an array of the currencies our app can find prices for.
+Looping over that array to generate a link for each one to the Price route.
+Placing the currency symbol in the :symbol part of the URL.
+Currencies.js
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# cryptoprices
+The Price Component
+Store the API key and currency symbol in different variables.
+Use the useEffect hook to make an API call.
+Interpolate the apikey and symbol in the fetch URL.
+Save the resulting data in state and render it.
+Include a loaded and loading function for rendering the data if exists.
+Price.js
