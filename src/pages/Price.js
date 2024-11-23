@@ -6,10 +6,10 @@ export default function Price(props) {
   const apiKey = "ABAC78FB-5E5F-47A7-A79E-F83712122E4F";
   // Grabbing the currency symbol from the URL Params.
   const params = useParams();
-    const symbol = params.symbol;
-     
+  const symbol = params.symbol;
+  
   // Using the other two variables to create our URL.
-  const url = `http://rest-sandbox.coinapi.io/v1/exchangerate/${symbol}/USD?apikey=${apiKey}`;
+   const url = `http://rest.coinapi.io/v1/exchangerate/${symbol}/USD?apikey=${apiKey}`;
 
   // State to hold the coin data.
   const [coin, setCoin] = useState("null");
@@ -28,7 +28,7 @@ export default function Price(props) {
   // useEffect to run getCoin when component mounts.
   useEffect(() => {
     getCoin();
-  }, [url]);
+  }, [symbol]);
 
   // loaded function for when data is fetched.
   const loaded = () => {
